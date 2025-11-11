@@ -1,134 +1,107 @@
-using System;
-using System.Data.SqlClient;
 using System.Data;
+using Microsoft.Data.SqlClient;
 
-namespace epood
+namespace epood;
+
+public partial class Form1 : Form
 {
-    public partial class Form1 : Form
+    // C:\Users\tahma\Source\Repos\epood\ShopDB.mdf
+    private SqlCommand? _command;
+    private SqlConnection _connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tahma\Source\Repos\epood\ShopDB.mdf;Integrated Security=True");
+    private SqlDataAdapter? _adapterProduct;
+    public Form1()
     {
+        InitializeComponent();
+        UpdateCategories();
+    }
+    private void UpdateCategories()
+    {
+        _connect.Open();
+        _adapterProduct = new SqlDataAdapter("SELECT Id, Kategooria_nim FROM KatTabel", _connect);
+        DataTable dt = new();
+        _adapterProduct.Fill(dt);
 
-        SqlConnection connect = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\Tooded_DB.mdf;Integrated Security = True");
-        SqlCommand command;
-
-        SqlDataAdapter adapter_toode, adapter_kategooria;
-
-        public Form1()
+        foreach (DataRow item in dt.Rows)
         {
-            InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lisakatbtn_Click(object sender, EventArgs e)
-        {
-            bool on = false;
-            foreach (var item in katbox.Items)
-            {
-                if (item.ToString() == katbox.Text)
-                {
-                    on = true;
-                }
-            }
-            if (on == false)
-            {
-                command = new SqlCommand("INSERT INTO kategooriatabel (Kategooria_nimetus) VALUES (@kat)", connect);
-                command.Open();
-                command.Parameters.AddWithValue("@kat", katbox.Text);
-                command.Close();
-                katbox.Items.Clear();
-                NaitaKategooriad();
-
-            }
+            if (!KategooriadBox.Items.Contains(item["Kategooria_nim"]))
+                KategooriadBox.Items.Add(item["Kategooria_nim"]);
             else
             {
-                MessageBox.Show("Selline kategooriat in juba olemas!");
+                _command = new SqlCommand("DELETE FROM KatTabel WHERE Id=@id", _connect);
+                _command.Parameters.AddWithValue("@id", item["Id"]);
+                _command.ExecuteNonQuery();
             }
         }
 
-        private void NaitaKategooriad()
+        _connect.Close();
+    }
+    private void LisaKat_Click(System.Object? sender, System.EventArgs e)
+    {
+        bool on = false;
+        foreach (var item in KategooriadBox.Items)
         {
-            connect.Open();
-            DataTable dt_kat = new SqlDataAdapter("SELECT Id,kategooria_nimetus FROM Kategooriatabel", connect);
-            adapter_kategooria.Fill(dt_kat.Rows);
-            foreach (DataRow item in dt_kat.Rows)
-            {
-                if (!katbox.Items.Contains(item["Kategooria_nimetus"]))
-                {
-                    katbox.Items.Add(item["Kategooria_Nimetus"]);
-                }
-                else
-                {
-                    command = new SqlCommand("DELETE FROM Kategooriatabel WHERE id=@id", connect);
-                    command.Parameters.AddWithValue("@id", item["id"]);
-                    command.ExucuteNonQuery();
-                }
-            }
-            Connect.Close();
+            if (item.ToString() == KategooriadBox.Text)
+                on = true;
         }
 
-        private void kustutabtn_Click(object sender, EventArgs e)
+        if (!on)
         {
-            if (katbox.SelectedItem != null)
-            {
-                connect.Open;
-                string kat_val = katbox.SelectedItem.ToString();
-                command = 
-            }
+            _command = new SqlCommand("INSERT INTO KatTabel (Kategooria_nim) VALUES (@cat)", _connect);
+            _connect.Open();
+            _command.Parameters.AddWithValue("@cat", KategooriadBox.Text);
+            _command.ExecuteNonQuery();
+            _connect.Close();
+            KategooriadBox.Items.Clear();
+            UpdateCategories();
+            MessageBox.Show($"Kategooria {KategooriadBox.Text} on lisatud!");
         }
+        else
+            MessageBox.Show("Selline kategooriat on juba olemas!");
+    }
 
-        SaveFileDialog save;
-        SaveFileDialog open;
-        string extensions = null;
-
-        private void otsi_fail_btn_Click(object sender, EventArgs e) 
+    private void KustutaKat_Click(System.Object? sender, System.EventArgs e)
+    {
+        if (KategooriadBox.SelectedItem != null)
         {
-            open = new SaveFileDialog();
-            open.InitialDirectory = @"C:\Users\marina.oleinik\Pildid";
-            open.Multiselect = true;
-            open.Filter = "Images Files(*.jpeg;*.bmp;*.png;*.jpg|*.jpeg;*.bmp;*.png;*.jpg)";
-
-            FileInfo open_info = new FileInfo(@"C:\Users\marina.oleinik\Pictures\"+open.FileName);
-            if (open.ShowDialog()==DialogResult.OK && toodetxt!= null)
-            {
-                save = new SaveFileDialog();
-                save.InitialDirectory = Path.GetFullPath(@"..\..\pildid");
-                extension = Path.GetExtension(open.FileName);
-                save.FileName = toodetxt.Text + Path.GetExtension(open.FileName);
-                save.Filter="Images"+Path.GetExtension(open.FileName)+"|"+Path.GetExtension(open.FileName);
-                if (save.ShowDialog()== DialogResult.OK && toodetxt.Text != null)
-                {
-                    File.Copy(open.FileName, save.FileName);
-                    toode_pb.Images=Image.FromFile(save.FileName);
-                }
-            }
-            else
-            {
-                Message.Show("Puudub toode nimetus või oli vajutatud");
-            }
-        
+            _connect.Open();
+            string value = KategooriadBox.SelectedItem.ToString() ?? string.Empty;
+            _command = new SqlCommand("DELETE FROM KatTabel WHERE Kategooria_nim=@cat", _connect);
+            _command.Parameters.AddWithValue("@cat", value);
+            _command.ExecuteNonQuery();
+            _connect.Close();
+            KategooriadBox.Items.Clear();
+            UpdateCategories();
         }
+    }
+
+    private SaveFileDialog? _saveFileDialog;
+    private OpenFileDialog? _openFileDialog;
+
+    private void Otsi_Click(System.Object? sender, System.EventArgs e)
+    {
+        _openFileDialog = new OpenFileDialog();
+        _openFileDialog.InitialDirectory = @"C:\Users\maksi\Pictures";
+        _openFileDialog.Multiselect = true;
+        _openFileDialog.Filter = "Pictures Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+        string product = ToodeBox.Text;
+
+        FileInfo openInfo = new(@"C:\Users\opilane\Pictures" + _openFileDialog.FileName);
+        if (_openFileDialog.ShowDialog() == DialogResult.OK && product != null)
+        {
+            _saveFileDialog = new SaveFileDialog();
+            _saveFileDialog.InitialDirectory = Path.GetFullPath(@"..\..\Pictures");
+
+            string ext = Path.GetExtension(_openFileDialog.FileName);
+            _saveFileDialog.FileName = product + ext;
+            _saveFileDialog.Filter = "Pictures" + ext + "|" + ext;
+
+            if (_saveFileDialog.ShowDialog() == DialogResult.OK && product != null)
+            {
+                File.Copy(_openFileDialog.FileName, _saveFileDialog.FileName);
+                PictureBox.Image = Image.FromFile(_saveFileDialog.FileName);
+            }
+        }
+        else
+            MessageBox.Show("Puudub toode nimetus või oli vajatud Cancel");
     }
 }
