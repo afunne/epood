@@ -17,7 +17,7 @@
 
         private void InitializeComponent()
         {
-            ToodeBox = new TextBox();
+            Toode_txt = new TextBox();
             KogusBox = new TextBox();
             HindBox = new TextBox();
             KategooriadBox = new ComboBox();
@@ -28,7 +28,7 @@
             KustutaKat = new Button();
             TextBox26 = new TextBox();
             PictureBox = new PictureBox();
-            DataGridView = new DataGridView();
+            DataGridView1 = new DataGridView();
             Lisa = new Button();
             Uuenda = new Button();
             Kustuta = new Button();
@@ -41,22 +41,22 @@
             Saada = new Button();
             Label35 = new Label();
             ((System.ComponentModel.ISupportInitialize)PictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // ToodeBox
+            // Toode_txt
             // 
-            ToodeBox.Location = new Point(95, 22);
-            ToodeBox.Name = "ToodeBox";
-            ToodeBox.Size = new Size(130, 31);
-            ToodeBox.TabIndex = 0;
-            ToodeBox.Text = "Kirjuta";
+            Toode_txt.Location = new Point(95, 22);
+            Toode_txt.Name = "Toode_txt";
+            Toode_txt.Size = new Size(130, 23);
+            Toode_txt.TabIndex = 0;
+            Toode_txt.Text = "Kirjuta";
             // 
             // KogusBox
             // 
             KogusBox.Location = new Point(95, 57);
             KogusBox.Name = "KogusBox";
-            KogusBox.Size = new Size(130, 31);
+            KogusBox.Size = new Size(130, 23);
             KogusBox.TabIndex = 1;
             KogusBox.Text = "Kirjuta";
             // 
@@ -64,17 +64,17 @@
             // 
             HindBox.Location = new Point(95, 92);
             HindBox.Name = "HindBox";
-            HindBox.Size = new Size(130, 31);
+            HindBox.Size = new Size(130, 23);
             HindBox.TabIndex = 2;
             HindBox.Text = "Kirjuta";
             // 
             // KategooriadBox
             // 
             KategooriadBox.DropDownWidth = 130;
-            KategooriadBox.ItemHeight = 25;
+            KategooriadBox.ItemHeight = 15;
             KategooriadBox.Location = new Point(95, 127);
             KategooriadBox.Name = "KategooriadBox";
-            KategooriadBox.Size = new Size(130, 33);
+            KategooriadBox.Size = new Size(130, 23);
             KategooriadBox.TabIndex = 3;
             KategooriadBox.Text = "Vali";
             // 
@@ -83,7 +83,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(20, 25);
             label1.Name = "label1";
-            label1.Size = new Size(65, 25);
+            label1.Size = new Size(43, 15);
             label1.TabIndex = 4;
             label1.Text = "Toode:";
             // 
@@ -92,7 +92,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(20, 60);
             label2.Name = "label2";
-            label2.Size = new Size(66, 25);
+            label2.Size = new Size(43, 15);
             label2.TabIndex = 5;
             label2.Text = "Kogus:";
             // 
@@ -101,7 +101,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(20, 95);
             label3.Name = "label3";
-            label3.Size = new Size(54, 25);
+            label3.Size = new Size(36, 15);
             label3.TabIndex = 6;
             label3.Text = "Hind:";
             // 
@@ -127,9 +127,8 @@
             // 
             TextBox26.Location = new Point(541, 223);
             TextBox26.Name = "TextBox26";
-            TextBox26.Size = new Size(128, 31);
+            TextBox26.Size = new Size(128, 23);
             TextBox26.TabIndex = 20;
-            TextBox26.Text = "TextBox26";
             // 
             // PictureBox
             // 
@@ -142,16 +141,18 @@
             PictureBox.TabStop = false;
             PictureBox.Text = "PictureBox25";
             // 
-            // DataGridView
+            // DataGridView1
             // 
-            DataGridView.BackgroundColor = Color.Gainsboro;
-            DataGridView.ColumnHeadersHeight = 34;
-            DataGridView.Location = new Point(20, 260);
-            DataGridView.Name = "DataGridView";
-            DataGridView.RowHeadersWidth = 62;
-            DataGridView.Size = new Size(650, 150);
-            DataGridView.TabIndex = 22;
-            DataGridView.Text = "DataGridView27";
+            DataGridView1.BackgroundColor = Color.Gainsboro;
+            DataGridView1.ColumnHeadersHeight = 34;
+            DataGridView1.Location = new Point(20, 260);
+            DataGridView1.Name = "DataGridView1";
+            DataGridView1.RowHeadersWidth = 62;
+            DataGridView1.Size = new Size(650, 150);
+            DataGridView1.TabIndex = 22;
+            DataGridView1.Text = "DataGridView27";
+            DataGridView1.CellMouseEnter += DataGridView_CellMouseEnter;
+            DataGridView1.CellMouseLeave += DataGridView_CellMouseLeave;
             // 
             // Lisa
             // 
@@ -160,6 +161,7 @@
             Lisa.Size = new Size(75, 42);
             Lisa.TabIndex = 23;
             Lisa.Text = "Lisa";
+            Lisa.Click += Lisa_Click;
             // 
             // Uuenda
             // 
@@ -239,14 +241,14 @@
             Label35.AutoSize = true;
             Label35.Location = new Point(20, 130);
             Label35.Name = "Label35";
-            Label35.Size = new Size(102, 25);
+            Label35.Size = new Size(67, 15);
             Label35.TabIndex = 35;
             Label35.Text = "Kategooria:";
             // 
             // Form1
             // 
             ClientSize = new Size(871, 474);
-            Controls.Add(ToodeBox);
+            Controls.Add(Toode_txt);
             Controls.Add(KogusBox);
             Controls.Add(HindBox);
             Controls.Add(KategooriadBox);
@@ -257,7 +259,7 @@
             Controls.Add(KustutaKat);
             Controls.Add(TextBox26);
             Controls.Add(PictureBox);
-            Controls.Add(DataGridView);
+            Controls.Add(DataGridView1);
             Controls.Add(Lisa);
             Controls.Add(Uuenda);
             Controls.Add(Kustuta);
@@ -272,14 +274,14 @@
             Name = "Form1";
             Text = "Pood";
             ((System.ComponentModel.ISupportInitialize)PictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox ToodeBox;
+        private System.Windows.Forms.TextBox Toode_txt;
         private System.Windows.Forms.TextBox KogusBox;
         private System.Windows.Forms.TextBox HindBox;
         private System.Windows.Forms.ComboBox KategooriadBox;
@@ -290,7 +292,7 @@
         private System.Windows.Forms.Button KustutaKat;
         private System.Windows.Forms.TextBox TextBox26;
         private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.DataGridView DataGridView;
+        private System.Windows.Forms.DataGridView DataGridView1;
         private System.Windows.Forms.Button Lisa;
         private System.Windows.Forms.Button Uuenda;
         private System.Windows.Forms.Button Kustuta;
