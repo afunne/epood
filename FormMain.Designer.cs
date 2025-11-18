@@ -18,32 +18,44 @@
 
         private void InitializeComponent()
         {
-            this.btnOpenForm1 = new System.Windows.Forms.Button();
-            this.btnOpenForm2 = new System.Windows.Forms.Button();
-            this.btnOpenForm3 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-
+            btnOpenForm1 = new Button();
+            btnOpenForm2 = new Button();
+            btnOpenForm3 = new Button();
+            SuspendLayout();
+            // 
             // btnOpenForm1
-            this.btnOpenForm1.Location = new System.Drawing.Point(30, 30);
-            this.btnOpenForm1.Name = "btnOpenForm1";
-            this.btnOpenForm1.Size = new System.Drawing.Size(120, 40);
-            this.btnOpenForm1.Text = "Ava Form 1";
-            this.btnOpenForm1.Click += new System.EventHandler(this.btnOpenForm1_Click);
-
+            // 
+            btnOpenForm1.Location = new Point(30, 30);
+            btnOpenForm1.Name = "btnOpenForm1";
+            btnOpenForm1.Size = new Size(120, 40);
+            btnOpenForm1.TabIndex = 0;
+            btnOpenForm1.Text = "Admin";
+            btnOpenForm1.Click += btnOpenForm1_Click;
+            // 
             // btnOpenForm2
-            this.btnOpenForm2.Location = new System.Drawing.Point(30, 80);
-            this.btnOpenForm2.Name = "btnOpenForm2";
-            this.btnOpenForm2.Size = new System.Drawing.Size(120, 40);
-            this.btnOpenForm2.Text = "Ava Form 2";
-            this.btnOpenForm2.Click += new System.EventHandler(this.btnOpenForm2_Click);
-                        
+            // 
+            btnOpenForm2.Location = new Point(30, 80);
+            btnOpenForm2.Name = "btnOpenForm2";
+            btnOpenForm2.Size = new Size(120, 40);
+            btnOpenForm2.TabIndex = 1;
+            btnOpenForm2.Text = "Custumer";
+            btnOpenForm2.Click += btnOpenForm2_Click;
+            // 
+            // btnOpenForm3
+            // 
+            btnOpenForm3.Location = new Point(0, 0);
+            btnOpenForm3.Name = "btnOpenForm3";
+            btnOpenForm3.Size = new Size(75, 23);
+            btnOpenForm3.TabIndex = 0;
+            // 
             // FormMain
-            this.ClientSize = new System.Drawing.Size(200, 200);
-            this.Controls.Add(this.btnOpenForm1);
-            this.Controls.Add(this.btnOpenForm2);
-            this.Name = "FormMain";
-            this.Text = "Select a Form";
-            this.ResumeLayout(false);
+            // 
+            ClientSize = new Size(200, 200);
+            Controls.Add(btnOpenForm1);
+            Controls.Add(btnOpenForm2);
+            Name = "FormMain";
+            Text = "Select a Form";
+            ResumeLayout(false);
         }
     }
 }

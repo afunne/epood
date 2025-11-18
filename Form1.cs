@@ -5,6 +5,9 @@ namespace epood;
 
 public partial class Form1 : Form
 {
+    // ConnectionForSchool: C:\Users\opilane\Source\Repos\epood\ShopDB.mdf
+    // ConnectionForHome: C:\Users\kasutaja\Source\Repos\epood\ShopDB.mdf
+
     private SqlCommand? _command;
     private SqlConnection _connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
       AttachDbFilename=C:\Users\opilane\Source\Repos\epood\ShopDB.mdf;
@@ -144,7 +147,9 @@ public partial class Form1 : Form
     {
         _connect.Open();
         DataTable _dt_toode = new DataTable();
-        _adapter_toode = new SqlDataAdapter("SELECT ToodeTabel.Id, ToodeTabel.Toode_nim, ToodeTabel.Kogus, ToodeTabel.Hind, ToodeTabel.Pilt, ToodeTabel.Bpilt, KatTabel.Kategooria_nim AS Kategooria_nim FROM ToodeTabel INNER JOIN KatTabel ON ToodeTabel.Kategooriad = KatTabel.Id", _connect);
+        _adapter_toode = new SqlDataAdapter("SELECT ToodeTabel.Id, ToodeTabel.Toode_nim, ToodeTabel.Kogus, " +
+            "ToodeTabel.Hind, ToodeTabel.Pilt, ToodeTabel.Bpilt, KatTabel.Kategooria_nim AS Kategooria_nim FROM ToodeTabel " +
+            "INNER JOIN KatTabel ON ToodeTabel.Kategooriad = KatTabel.Id", _connect);
         _adapter_toode.Fill(_dt_toode);
         DataGridView.Columns.Clear();
         DataGridView.DataSource = _dt_toode;
@@ -524,7 +529,7 @@ public partial class Form1 : Form
                     };
 
                     string imagePath = Path.Combine(
-                        Path.GetFullPath(@"..\..\..\Pildid"),
+                        Path.GetFullPath(@"..\..\..\Images"),
                         row["Pilt"].ToString() ?? "epood.png");
 
                     PictureBox pb = new PictureBox
@@ -534,7 +539,7 @@ public partial class Form1 : Form
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Image = File.Exists(imagePath)
                             ? Image.FromFile(imagePath)
-                            : Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\..\Pildid"), "epood.png")),
+                            : Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\..\Images"), "epood.png")),
                         Dock = DockStyle.Top
                     };
 
@@ -581,5 +586,10 @@ public partial class Form1 : Form
         };
 
         storeForm.Show();
+    }
+
+    private void Saada_Click(object sender, EventArgs e)
+    {
+
     }
 }
