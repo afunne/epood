@@ -1,4 +1,4 @@
-﻿namespace epood
+namespace epood
 {
     partial class Form1
     {
@@ -17,271 +17,242 @@
 
         private void InitializeComponent()
         {
-            Toode_txt = new TextBox();
-            KogusBox = new TextBox();
-            HindBox = new TextBox();
-            KategooriadBox = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            LisaKat = new Button();
-            KustutaKat = new Button();
-            TextBox26 = new TextBox();
-            PictureBox = new PictureBox();
-            DataGridView1 = new DataGridView();
-            Lisa = new Button();
-            Uuenda = new Button();
-            Kustuta = new Button();
-            Puhasta = new Button();
-            Maksta = new Button();
-            Pood = new Button();
-            Valin = new Button();
-            Otsi = new Button();
-            Ostan = new Button();
-            Saada = new Button();
-            Label35 = new Label();
-            ((System.ComponentModel.ISupportInitialize)PictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
-            SuspendLayout();
-            // 
-            // Toode_txt
-            // 
-            Toode_txt.Location = new Point(95, 22);
-            Toode_txt.Name = "Toode_txt";
-            Toode_txt.Size = new Size(130, 23);
-            Toode_txt.TabIndex = 0;
-            Toode_txt.Text = "Kirjuta";
-            // 
+            this.ToodeBox = new System.Windows.Forms.TextBox();
+            this.KogusBox = new System.Windows.Forms.TextBox();
+            this.HindBox = new System.Windows.Forms.TextBox();
+            this.KategooriadBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LisaKat = new System.Windows.Forms.Button();
+            this.KustutaKat = new System.Windows.Forms.Button();
+            this.TextBox26 = new System.Windows.Forms.TextBox();
+            this.PictureBox = new System.Windows.Forms.PictureBox();
+            this.DataGridView = new System.Windows.Forms.DataGridView();
+            this.Lisa = new System.Windows.Forms.Button();
+            this.Uuenda = new System.Windows.Forms.Button();
+            this.Kustuta = new System.Windows.Forms.Button();
+            this.Puhasta = new System.Windows.Forms.Button();
+            this.Maksta = new System.Windows.Forms.Button();
+            this.Pood = new System.Windows.Forms.Button();
+            this.Valin = new System.Windows.Forms.Button();
+            this.Otsi = new System.Windows.Forms.Button();
+            this.Ostan = new System.Windows.Forms.Button();
+            this.Saada = new System.Windows.Forms.Button();
+            this.Label35 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+            this.SuspendLayout();
+            //
+            // ToodeBox
+            //
+            this.ToodeBox.Modified = true;
+            this.ToodeBox.Location = new System.Drawing.Point(95, 22);
+            this.ToodeBox.Size = new System.Drawing.Size(130, 23);
+            //
             // KogusBox
-            // 
-            KogusBox.Location = new Point(95, 57);
-            KogusBox.Name = "KogusBox";
-            KogusBox.Size = new Size(130, 23);
-            KogusBox.TabIndex = 1;
-            KogusBox.Text = "Kirjuta";
-            // 
+            //
+            this.KogusBox.Modified = true;
+            this.KogusBox.Location = new System.Drawing.Point(95, 57);
+            this.KogusBox.Size = new System.Drawing.Size(130, 23);
+            this.KogusBox.TabIndex = 1;
+            //
             // HindBox
-            // 
-            HindBox.Location = new Point(95, 92);
-            HindBox.Name = "HindBox";
-            HindBox.Size = new Size(130, 23);
-            HindBox.TabIndex = 2;
-            HindBox.Text = "Kirjuta";
-            // 
+            //
+            this.HindBox.Modified = true;
+            this.HindBox.Location = new System.Drawing.Point(95, 92);
+            this.HindBox.Size = new System.Drawing.Size(130, 23);
+            this.HindBox.TabIndex = 2;
+            //
             // KategooriadBox
-            // 
-            KategooriadBox.DropDownWidth = 130;
-            KategooriadBox.ItemHeight = 15;
-            KategooriadBox.Location = new Point(95, 127);
-            KategooriadBox.Name = "KategooriadBox";
-            KategooriadBox.Size = new Size(130, 23);
-            KategooriadBox.TabIndex = 3;
-            KategooriadBox.Text = "Vali";
-            // 
+            //
+            this.KategooriadBox.DropDownWidth = 130;
+            this.KategooriadBox.ItemHeight = 15;
+            this.KategooriadBox.Location = new System.Drawing.Point(95, 127);
+            this.KategooriadBox.Size = new System.Drawing.Size(130, 23);
+            this.KategooriadBox.TabIndex = 3;
+            //
             // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(20, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Toode:";
-            // 
+            //
+            this.label1.AutoSize = true;
+            this.label1.Text = "Toode:";
+            this.label1.Location = new System.Drawing.Point(20, 25);
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 4;
+            //
             // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(20, 60);
-            label2.Name = "label2";
-            label2.Size = new Size(43, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Kogus:";
-            // 
+            //
+            this.label2.AutoSize = true;
+            this.label2.Text = "Kogus:";
+            this.label2.Location = new System.Drawing.Point(20, 60);
+            this.label2.Size = new System.Drawing.Size(43, 15);
+            this.label2.TabIndex = 5;
+            //
             // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(20, 95);
-            label3.Name = "label3";
-            label3.Size = new Size(36, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Hind:";
-            // 
+            //
+            this.label3.AutoSize = true;
+            this.label3.Text = "Hind:";
+            this.label3.Location = new System.Drawing.Point(20, 95);
+            this.label3.Size = new System.Drawing.Size(36, 15);
+            this.label3.TabIndex = 6;
+            //
             // LisaKat
-            // 
-            LisaKat.Location = new Point(20, 174);
-            LisaKat.Name = "LisaKat";
-            LisaKat.Size = new Size(110, 34);
-            LisaKat.TabIndex = 8;
-            LisaKat.Text = "Lisa kategooriat";
-            LisaKat.Click += LisaKat_Click;
-            // 
+            //
+            this.LisaKat.Text = "Lisa kategooriat";
+            this.LisaKat.Location = new System.Drawing.Point(20, 174);
+            this.LisaKat.Size = new System.Drawing.Size(110, 34);
+            this.LisaKat.TabIndex = 8;
+            this.LisaKat.Click += new System.EventHandler(LisaKat_Click);
+            //
             // KustutaKat
-            // 
-            KustutaKat.Location = new Point(136, 176);
-            KustutaKat.Name = "KustutaKat";
-            KustutaKat.Size = new Size(120, 32);
-            KustutaKat.TabIndex = 9;
-            KustutaKat.Text = "Kustuta kategooriat";
-            KustutaKat.Click += KustutaKat_Click;
-            // 
+            //
+            this.KustutaKat.Text = "Kustuta kategooriat";
+            this.KustutaKat.Location = new System.Drawing.Point(136, 176);
+            this.KustutaKat.Size = new System.Drawing.Size(120, 32);
+            this.KustutaKat.TabIndex = 9;
+            this.KustutaKat.Click += new System.EventHandler(KustutaKat_Click);
+            //
             // TextBox26
-            // 
-            TextBox26.Location = new Point(541, 223);
-            TextBox26.Name = "TextBox26";
-            TextBox26.Size = new Size(128, 23);
-            TextBox26.TabIndex = 20;
-            // 
+            //
+            this.TextBox26.Text = "TextBox26";
+            this.TextBox26.Location = new System.Drawing.Point(540, 210);
+            this.TextBox26.Size = new System.Drawing.Size(128, 23);
+            this.TextBox26.TabIndex = 20;
+            //
             // PictureBox
-            // 
-            PictureBox.BackColor = Color.WhiteSmoke;
-            PictureBox.Location = new Point(288, 20);
-            PictureBox.Name = "PictureBox";
-            PictureBox.Size = new Size(380, 156);
-            PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            PictureBox.TabIndex = 21;
-            PictureBox.TabStop = false;
-            PictureBox.Text = "PictureBox25";
-            // 
-            // DataGridView1
-            // 
-            DataGridView1.BackgroundColor = Color.Gainsboro;
-            DataGridView1.ColumnHeadersHeight = 34;
-            DataGridView1.Location = new Point(20, 260);
-            DataGridView1.Name = "DataGridView1";
-            DataGridView1.RowHeadersWidth = 62;
-            DataGridView1.Size = new Size(650, 150);
-            DataGridView1.TabIndex = 22;
-            DataGridView1.Text = "DataGridView27";
-            DataGridView1.CellMouseEnter += DataGridView_CellMouseEnter;
-            DataGridView1.CellMouseLeave += DataGridView_CellMouseLeave;
-            // 
+            //
+            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox.TabIndex = 21;
+            this.PictureBox.Text = "PictureBox25";
+            this.PictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PictureBox.Location = new System.Drawing.Point(288, 20);
+            this.PictureBox.Size = new System.Drawing.Size(380, 156);
+            //
+            // DataGridView
+            //
+            this.DataGridView.AllowUserToAddRows = false;
+            this.DataGridView.AllowUserToDeleteRows = false;
+            this.DataGridView.AllowUserToResizeColumns = false;
+            this.DataGridView.AllowUserToResizeRows = false;
+            this.DataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DataGridView.ReadOnly = true;
+            this.DataGridView.Text = "DataGridView27";
+            this.DataGridView.Location = new System.Drawing.Point(20, 260);
+            this.DataGridView.Size = new System.Drawing.Size(650, 150);
+            this.DataGridView.TabIndex = 22;
+            this.DataGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(DataGridView_CellMouseLeave);
+            this.DataGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(DataGridView_CellMouseEnter);
+            //
             // Lisa
-            // 
-            Lisa.Location = new Point(20, 212);
-            Lisa.Name = "Lisa";
-            Lisa.Size = new Size(75, 42);
-            Lisa.TabIndex = 23;
-            Lisa.Text = "Lisa";
-            Lisa.Click += Lisa_Click;
-            // 
+            //
+            this.Lisa.Text = "Lisa";
+            this.Lisa.Location = new System.Drawing.Point(20, 212);
+            this.Lisa.TabIndex = 23;
+            this.Lisa.Click += new System.EventHandler(Lisa_Click);
+            //
             // Uuenda
-            // 
-            Uuenda.Location = new Point(100, 212);
-            Uuenda.Name = "Uuenda";
-            Uuenda.Size = new Size(75, 42);
-            Uuenda.TabIndex = 24;
-            Uuenda.Text = "Uuenda";
-            // 
+            //
+            this.Uuenda.Text = "Uuenda";
+            this.Uuenda.Location = new System.Drawing.Point(100, 212);
+            this.Uuenda.TabIndex = 24;
+            this.Uuenda.Click += new System.EventHandler(Uuenda_Click);
+            //
             // Kustuta
-            // 
-            Kustuta.Location = new Point(180, 212);
-            Kustuta.Name = "Kustuta";
-            Kustuta.Size = new Size(75, 42);
-            Kustuta.TabIndex = 25;
-            Kustuta.Text = "Kustuta";
-            // 
+            //
+            this.Kustuta.Text = "Kustuta";
+            this.Kustuta.Location = new System.Drawing.Point(180, 212);
+            this.Kustuta.TabIndex = 25;
+            this.Kustuta.Click += new System.EventHandler(Kustuta_Click);
+            //
             // Puhasta
-            // 
-            Puhasta.Location = new Point(292, 218);
-            Puhasta.Name = "Puhasta";
-            Puhasta.Size = new Size(75, 36);
-            Puhasta.TabIndex = 26;
-            Puhasta.Text = "Puhasta";
-            // 
+            //
+            this.Puhasta.Text = "Puhasta";
+            this.Puhasta.Location = new System.Drawing.Point(292, 212);
+            this.Puhasta.TabIndex = 26;
+            this.Puhasta.Click += new System.EventHandler(Puhasta_Click);
+            //
             // Maksta
-            // 
-            Maksta.Location = new Point(376, 218);
-            Maksta.Name = "Maksta";
-            Maksta.Size = new Size(75, 42);
-            Maksta.TabIndex = 29;
-            Maksta.Text = "Maksta";
-            // 
+            //
+            this.Maksta.Text = "Maksta";
+            this.Maksta.Location = new System.Drawing.Point(376, 212);
+            this.Maksta.TabIndex = 29;
+            //
             // Pood
-            // 
-            Pood.Location = new Point(460, 218);
-            Pood.Name = "Pood";
-            Pood.Size = new Size(75, 42);
-            Pood.TabIndex = 30;
-            Pood.Text = "Pood";
-            // 
+            //
+            this.Pood.Text = "Pood";
+            this.Pood.Location = new System.Drawing.Point(460, 212);
+            this.Pood.TabIndex = 30;
+            this.Pood.Click += new System.EventHandler(Pood_Click);
+            //
             // Valin
-            // 
-            Valin.Location = new Point(376, 184);
-            Valin.Name = "Valin";
-            Valin.Size = new Size(75, 37);
-            Valin.TabIndex = 31;
-            Valin.Text = "Valin";
-            // 
+            //
+            this.Valin.Text = "Valin";
+            this.Valin.Location = new System.Drawing.Point(376, 184);
+            this.Valin.TabIndex = 31;
+            //
             // Otsi
-            // 
-            Otsi.Location = new Point(292, 184);
-            Otsi.Name = "Otsi";
-            Otsi.Size = new Size(75, 28);
-            Otsi.TabIndex = 32;
-            Otsi.Text = "Otsi fail";
-            Otsi.Click += Otsi_Click;
-            // 
+            //
+            this.Otsi.Text = "Otsi fail";
+            this.Otsi.Location = new System.Drawing.Point(292, 184);
+            this.Otsi.TabIndex = 32;
+            this.Otsi.Click += new System.EventHandler(Otsi_Click);
+            //
             // Ostan
-            // 
-            Ostan.Location = new Point(460, 184);
-            Ostan.Name = "Ostan";
-            Ostan.Size = new Size(75, 37);
-            Ostan.TabIndex = 33;
-            Ostan.Text = "Ostan";
-            // 
+            //
+            this.Ostan.Text = "Ostan";
+            this.Ostan.Location = new System.Drawing.Point(460, 184);
+            this.Ostan.TabIndex = 33;
+            //
             // Saada
-            // 
-            Saada.Location = new Point(540, 184);
-            Saada.Name = "Saada";
-            Saada.Size = new Size(124, 37);
-            Saada.TabIndex = 34;
-            Saada.Text = "Saada arve";
-            // 
+            //
+            this.Saada.Text = "Saada arve";
+            this.Saada.Location = new System.Drawing.Point(540, 184);
+            this.Saada.Size = new System.Drawing.Size(124, 23);
+            this.Saada.TabIndex = 34;
+            //
             // Label35
-            // 
-            Label35.AutoSize = true;
-            Label35.Location = new Point(20, 130);
-            Label35.Name = "Label35";
-            Label35.Size = new Size(67, 15);
-            Label35.TabIndex = 35;
-            Label35.Text = "Kategooria:";
-            // 
-            // Form1
-            // 
-            ClientSize = new Size(871, 474);
-            Controls.Add(Toode_txt);
-            Controls.Add(KogusBox);
-            Controls.Add(HindBox);
-            Controls.Add(KategooriadBox);
-            Controls.Add(label1);
-            Controls.Add(label2);
-            Controls.Add(label3);
-            Controls.Add(LisaKat);
-            Controls.Add(KustutaKat);
-            Controls.Add(TextBox26);
-            Controls.Add(PictureBox);
-            Controls.Add(DataGridView1);
-            Controls.Add(Lisa);
-            Controls.Add(Uuenda);
-            Controls.Add(Kustuta);
-            Controls.Add(Puhasta);
-            Controls.Add(Maksta);
-            Controls.Add(Pood);
-            Controls.Add(Valin);
-            Controls.Add(Otsi);
-            Controls.Add(Ostan);
-            Controls.Add(Saada);
-            Controls.Add(Label35);
-            Name = "Form1";
-            Text = "Pood";
-            ((System.ComponentModel.ISupportInitialize)PictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            //
+            this.Label35.AutoSize = true;
+            this.Label35.Text = "Kategooria:";
+            this.Label35.Location = new System.Drawing.Point(20, 130);
+            this.Label35.Size = new System.Drawing.Size(67, 15);
+            this.Label35.TabIndex = 35;
+            //
+            // form
+            //
+            this.Size = new System.Drawing.Size(712, 472);
+            this.Text = "Pood";
+            this.Controls.Add(this.ToodeBox);
+            this.Controls.Add(this.KogusBox);
+            this.Controls.Add(this.HindBox);
+            this.Controls.Add(this.KategooriadBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.LisaKat);
+            this.Controls.Add(this.KustutaKat);
+            this.Controls.Add(this.TextBox26);
+            this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.DataGridView);
+            this.Controls.Add(this.Lisa);
+            this.Controls.Add(this.Uuenda);
+            this.Controls.Add(this.Kustuta);
+            this.Controls.Add(this.Puhasta);
+            this.Controls.Add(this.Maksta);
+            this.Controls.Add(this.Pood);
+            this.Controls.Add(this.Valin);
+            this.Controls.Add(this.Otsi);
+            this.Controls.Add(this.Ostan);
+            this.Controls.Add(this.Saada);
+            this.Controls.Add(this.Label35);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+            this.ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox Toode_txt;
+        private System.Windows.Forms.TextBox ToodeBox;
         private System.Windows.Forms.TextBox KogusBox;
         private System.Windows.Forms.TextBox HindBox;
         private System.Windows.Forms.ComboBox KategooriadBox;
@@ -292,7 +263,7 @@
         private System.Windows.Forms.Button KustutaKat;
         private System.Windows.Forms.TextBox TextBox26;
         private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.DataGridView DataGridView1;
+        private System.Windows.Forms.DataGridView DataGridView;
         private System.Windows.Forms.Button Lisa;
         private System.Windows.Forms.Button Uuenda;
         private System.Windows.Forms.Button Kustuta;
@@ -306,3 +277,53 @@
         private System.Windows.Forms.Label Label35;
     }
 }
+
+// private void LisaKat_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
+
+// private void KustutaKat_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
+
+// private void DataGridView_CellMouseLeave(System.Object? sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+// {
+// 
+// }
+
+// private void DataGridView_CellMouseEnter(System.Object? sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+// {
+// 
+// }
+
+// private void Lisa_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
+
+// private void Uuenda_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
+
+// private void Kustuta_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
+
+// private void Puhasta_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
+
+// private void Pood_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
+
+// private void Otsi_Click(System.Object? sender, System.EventArgs e)
+// {
+// 
+// }
