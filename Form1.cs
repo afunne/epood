@@ -7,7 +7,7 @@ public partial class Form1 : Form
 {
     private SqlCommand? _command;
     private SqlConnection _connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
-      AttachDbFilename=C:\Users\opilane\source\repos\ProgrammeerimineTARpv24\Tund8\ShopDB.mdf;
+      AttachDbFilename=C:\Users\opilane\Source\Repos\epood\ShopDB.mdf;
       Integrated Security=True;");
     private SqlDataAdapter? _adapterProduct;
     public Form1()
@@ -124,11 +124,11 @@ public partial class Form1 : Form
         if (_openFileDialog.ShowDialog() == DialogResult.OK && product != null)
         {
             _saveFileDialog = new SaveFileDialog();
-            _saveFileDialog.InitialDirectory = Path.GetFullPath(@"..\..\..\Pildid");
+            _saveFileDialog.InitialDirectory = Path.GetFullPath(@"..\..\..\Images");
 
             string ext = Path.GetExtension(_openFileDialog.FileName);
             _saveFileDialog.FileName = product + ext;
-            _saveFileDialog.Filter = "Pildid" + ext + "|" + ext;
+            _saveFileDialog.Filter = "Images" + ext + "|" + ext;
 
             if (_saveFileDialog.ShowDialog() == DialogResult.OK && product != null)
             {
@@ -161,7 +161,7 @@ public partial class Form1 : Form
             }
         }
         DataGridView.Columns.Add(combo_kat);
-        PictureBox.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\..\Pildid"), "epood.png"));
+        PictureBox.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\..\Images"), "epood.png"));
         _connect.Close();
     }
     private Form? popupForm;
@@ -236,7 +236,7 @@ public partial class Form1 : Form
             MessageBox.Show("Palun vali pilt enne lisamist!", "Viga", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
-
+        // pildid
         try
         {
             _connect.Open();
@@ -276,7 +276,7 @@ public partial class Form1 : Form
         KogusBox.Text = "";
         HindBox.Text = "";
         KategooriadBox.SelectedItem = null;
-        using (FileStream fs = new FileStream(Path.Combine(Path.GetFullPath(@"..\..\..\Pildid"), "epood.png"), FileMode.Open, FileAccess.Read))
+        using (FileStream fs = new FileStream(Path.Combine(Path.GetFullPath(@"..\..\..\Images"), "epood.png"), FileMode.Open, FileAccess.Read))
         {
             PictureBox.Image = Image.FromStream(fs);
         }
