@@ -6,11 +6,11 @@ namespace epood;
 public partial class Form1 : Form
 {
     // ConnectionForSchool: C:\Users\opilane\Source\Repos\epood\ShopDB.mdf
-    // ConnectionForHome: C:\Users\kasutaja\Source\Repos\epood\ShopDB.mdf
+    // ConnectionForHome: C:\Users\tahma\Source\Repos\epood\ShopDB.mdf
 
     private SqlCommand? _command;
     private SqlConnection _connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
-      AttachDbFilename=C:\Users\opilane\Source\Repos\epood\ShopDB.mdf;
+      AttachDbFilename=C:\Users\tahma\Source\Repos\epood\ShopDB.mdf;
       Integrated Security=True;");
     private SqlDataAdapter? _adapterProduct;
     public Form1()
