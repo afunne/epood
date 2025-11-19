@@ -434,7 +434,7 @@ public partial class Form1 : Form
                 _connect.Close();
         }
     }
-    private void Pood_Click(System.Object? sender, System.EventArgs e)
+    private void Pood_Click(Object sender, EventArgs e)
     {
         Form storeForm = new Form
         {
