@@ -10,7 +10,7 @@ public partial class Form1 : Form
 
     private SqlCommand? _command;
     private SqlConnection _connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
-      AttachDbFilename=C:\Users\tahma\Source\Repos\epood\ShopDB.mdf;
+      AttachDbFilename=C:\Users\opilane\Source\Repos\epood\ShopDB.mdf;
       Integrated Security=True;");
     private SqlDataAdapter? _adapterProduct;
     public Form1()

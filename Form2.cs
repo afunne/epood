@@ -8,9 +8,12 @@ namespace epood
 {
     public partial class Form2 : Form
     {
+        // ConnectionForSchool: C:\Users\opilane\Source\Repos\epood\ShopDB.mdf
+        // ConnectionForHome: C:\Users\tahma\Source\Repos\epood\ShopDB.mdf
+
         private SqlConnection _connect = new SqlConnection(
             @"Data Source=(LocalDB)\MSSQLLocalDB;
-              AttachDbFilename=C:\Users\tahma\Source\Repos\epood\ShopDB.mdf;
+              AttachDbFilename=C:\Users\opilane\Source\Repos\epood\ShopDB.mdf;
               Integrated Security=True;");
 
         private decimal wallet = 0m;
@@ -43,7 +46,7 @@ namespace epood
                 IsSplitterFixed = false
             };
 
-            // -------- LEFT PANEL --------
+            // panel on the left side
             split.Panel1.Padding = new Padding(10);
 
             walletLabel = new Label
@@ -100,7 +103,7 @@ namespace epood
             split.Panel1.Controls.Add(walletAddBox);
             split.Panel1.Controls.Add(walletLabel);
 
-            // -------- RIGHT PANEL --------
+            // panel on the right side
             categoryBox = new ListBox
             {
                 Dock = DockStyle.Top,
@@ -123,9 +126,7 @@ namespace epood
             this.Controls.Add(split);
         }
 
-        // -----------------------------
-        // Load Categories
-        // -----------------------------
+        // handles loading categories into the categoryBox
         private void LoadCategories()
         {
             try
@@ -148,9 +149,7 @@ namespace epood
             }
         }
 
-        // -----------------------------
-        // Category Changed
-        // -----------------------------
+        // handles loading products when category is changed
         private void CategoryChanged(object? sender, EventArgs e)
         {
             if (categoryBox.SelectedItem == null) return;
@@ -167,7 +166,8 @@ namespace epood
                     _connect.Open();
 
                 SqlCommand cmd = new SqlCommand(
-                    "SELECT Id, Toode_nim, Hind, Kogus, Bpilt, Pilt FROM ToodeTabel WHERE Kategooriad = @id",
+                    "SELECT Id, Toode_nim, Hind, Kogus, Bpilt, Pilt FROM " +
+                    "ToodeTabel WHERE Kategooriad = @id",
                     _connect);
                 cmd.Parameters.AddWithValue("@id", catId);
 
@@ -185,9 +185,7 @@ namespace epood
             }
         }
 
-        // -----------------------------
-        // Build Product Cards
-        // -----------------------------
+        // creates and adds a product card to the productPanel
         private void AddProductCard(DataRow productRow)
         {
             int id = Convert.ToInt32(productRow["Id"]);
@@ -286,9 +284,7 @@ namespace epood
             productPanel.Controls.Add(card);
         }
 
-        // -----------------------------
-        // Add Money
-        // -----------------------------
+        // insert your card, just kidding you can isnert it by typing <3
         private void AddMoney(object? sender, EventArgs e)
         {
             if (decimal.TryParse(walletAddBox.Text.Replace(',', '.'), out decimal amount) && amount > 0)
@@ -303,9 +299,7 @@ namespace epood
             }
         }
 
-        // -----------------------------
-        // Double-click to remove selected item(s)
-        // -----------------------------
+        // double click to remove item from bill, cuz didn't work with a button somehow :skull:
         private void BillBox_DoubleClick(object? sender, EventArgs e)
         {
             if (billBox.SelectedItems.Count == 0) return;
@@ -329,9 +323,7 @@ namespace epood
             billLabel.Text = $"Summa: {billTotal:N2}€";
         }
 
-        // -----------------------------
-        // Purchase All
-        // -----------------------------
+        // handles purchasing all items in the bill (-_-)
         private void PurchaseAll(object? sender, EventArgs e)
         {
             if (billTotal <= 0)
@@ -380,7 +372,7 @@ namespace epood
             MessageBox.Show("Ost sooritatud!");
 
             // Reload products
-            CategoryChanged(null, null);
+            CategoryChanged(null, null); //second null somehow fixed da bugs
         }
     }
 }
