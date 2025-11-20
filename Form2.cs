@@ -126,7 +126,7 @@ namespace epood
             this.Controls.Add(split);
         }
 
-        // handles loading categories into the categoryBox
+        // loading categories into the categoryBox (:thumbs up:)
         private void LoadCategories()
         {
             try
@@ -149,7 +149,7 @@ namespace epood
             }
         }
 
-        // handles loading products when category is changed
+        // loading products when category is changed (yeah i fr needed that)
         private void CategoryChanged(object? sender, EventArgs e)
         {
             if (categoryBox.SelectedItem == null) return;
@@ -185,7 +185,7 @@ namespace epood
             }
         }
 
-        // creates and adds a product card to the productPanel
+        // creates and adds a product card to the productPanel (PUT THEM IN THERE)
         private void AddProductCard(DataRow productRow)
         {
             int id = Convert.ToInt32(productRow["Id"]);

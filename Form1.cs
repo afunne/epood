@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 
 namespace epood;
 
+//web
 public partial class Form1 : Form
 {
     // ConnectionForSchool: C:\Users\opilane\Source\Repos\epood\ShopDB.mdf
